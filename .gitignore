@@ -1,0 +1,71 @@
+# Generated files
+target
+**/*.rs.bk
+
+# Editor files
+.idea/
+*.iml
+.vscode
+.cargo
+
+# Logs and temp files
+*.log
+*.swp
+*.swo
+
+# Binary files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Cargo-specific
+Cargo.lock
+cargo-cache
+rust-cache
+
+# Debug files
+*.dSYM/
+*.gcda
+*.gcno
+
+# Build directories
+build
+bin
+obj
+
+# Compiled files
+*.o
+*.obj
+*.exe
+*.so
+*.dylib
+*.a
+*.lib
+
+# IDE files
+.vscode/
+.idea/
+*.suo
+*.opensdf
+*.sdf
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+
+# Debug files
+*.pdb
+*.ilk
+*.manifest
+
+# Editor files
+*.swp
+*.swo
+*.out
+
+# Project-specific
+*.user
+*.sln
+*.vcxproj.user
