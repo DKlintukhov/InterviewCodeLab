@@ -1,0 +1,12 @@
+[package]
+name = "rust"
+authors = ["Denis Klintukhov <denis.klintukhov@gmail.com>"]
+license = "MIT"
+license-file = "LICENSE"
+homepage = "https://github.com/DKlintukhov/InterviewCodeLab"
+repository = "https://github.com/DKlintukhov/InterviewCodeLab"
+readme = "README.md"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
