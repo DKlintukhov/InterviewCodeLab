@@ -2,7 +2,6 @@
 name = "rust"
 authors = ["Denis Klintukhov <denis.klintukhov@gmail.com>"]
 license = "MIT"
-license-file = "LICENSE"
 homepage = "https://github.com/DKlintukhov/InterviewCodeLab"
 repository = "https://github.com/DKlintukhov/InterviewCodeLab"
 readme = "README.md"
