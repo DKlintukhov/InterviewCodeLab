@@ -27,11 +27,11 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
     endif()
 endif()
 
-set(SRC ${CMAKE_SOURCE_DIR}/src//SimpleTest.hpp)
+set(SRC ${CMAKE_SOURCE_DIR}/src/util.cpp)
 
 add_executable(${TARGET} main.cpp ${SRC})
 target_link_libraries(${TARGET} PRIVATE Threads::Threads ${Boost_LIBRARIES})
-target_link_directories(${TARGET} PRIVATE ${CMAKE_SOURCE_DIR} ${Boost_INCLUDE_DIR})
+target_include_directories(${TARGET} PRIVATE ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR} ${Boost_INCLUDE_DIR})
 target_precompile_headers(${TARGET} PRIVATE pch.h)
 
 add_test(NAME ${TARGET} COMMAND $<TARGET_FILE:${TARGET}> --log_level=message)

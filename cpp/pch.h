@@ -27,8 +27,11 @@
 
 #include <string>
 #include <vector>
+#include <sstream>
 #include <algorithm>
 #include <utility>
 #include <numeric>
+#include <exception>
+#include <iostream>
 
 #endif
