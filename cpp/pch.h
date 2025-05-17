@@ -33,5 +33,7 @@
 #include <numeric>
 #include <exception>
 #include <iostream>
+#include <cstdint>
+#include <limits>
 
 #endif

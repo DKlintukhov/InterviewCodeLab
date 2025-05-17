@@ -27,7 +27,10 @@ elseif(CMAKE_BUILD_TYPE STREQUAL "Release")
     endif()
 endif()
 
-set(SRC ${CMAKE_SOURCE_DIR}/src/util.cpp)
+set(SRC 
+    ${CMAKE_SOURCE_DIR}/src/util.cpp
+    ${CMAKE_SOURCE_DIR}/src/cheapest_path.cpp
+)
 
 add_executable(${TARGET} main.cpp ${SRC})
 target_link_libraries(${TARGET} PRIVATE Threads::Threads ${Boost_LIBRARIES})

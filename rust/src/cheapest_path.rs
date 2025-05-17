@@ -15,27 +15,28 @@
 * 256 МБ
 */
 
-pub fn get_cheapest_path(grid: Vec<Vec<u32>>) -> u32 {
-    if grid.is_empty() {
+pub fn get_cheapest_path(matrix: Vec<Vec<u32>>) -> u32 {
+    if matrix.is_empty() {
         return 0;
     }
 
-    let rows = grid.len();
-    let cols = grid.first().unwrap().len();
+    let rows = matrix.len();
+    let cols = matrix.first().unwrap().len();
 
     let mut dp: Vec<Vec<u32>> = vec![vec![0; cols]; rows];
-    dp[0][0] = grid[0][0];
-    for i in 1..cols {
-        dp[0][i] = dp[0][i - 1] + grid[0][i];
+    dp[0][0] = matrix[0][0];
+
+    for i in 1..rows {
+        dp[i][0] = dp[i - 1][0] + matrix[i][0];
     }
 
-    for j in 1..rows {
-        dp[j][0] = dp[j - 1][0] + grid[j][0];
+    for i in 1..cols {
+        dp[0][i] = dp[0][i - 1] + matrix[0][i];
     }
 
     for i in 1..rows {
         for j in 1..cols {
-            dp[i][j] = std::cmp::min(dp[i - 1][j], dp[i][j - 1]) + grid[i][j];
+            dp[i][j] = std::cmp::min(dp[i - 1][j], dp[i][j - 1]) + matrix[i][j];
         }
     }
 
@@ -48,31 +49,31 @@ mod tests {
 
     #[test]
     fn test_get_cheapest_path_empty() {
-        let grid: Vec<Vec<u32>> = vec![];
-        assert_eq!(get_cheapest_path(grid), 0);
+        let matrix: Vec<Vec<u32>> = vec![];
+        assert_eq!(get_cheapest_path(matrix), 0);
     }
 
     #[test]
     fn test_get_cheapest_path_1() {
-        let grid: Vec<Vec<u32>> = vec![vec![1, 1], vec![2, 1]];
-        assert_eq!(get_cheapest_path(grid), 3);
+        let matrix: Vec<Vec<u32>> = vec![vec![1, 1], vec![2, 1]];
+        assert_eq!(get_cheapest_path(matrix), 3);
     }
 
     #[test]
     fn test_get_cheapest_path_2() {
-        let grid: Vec<Vec<u32>> = vec![vec![1, 3, 1], vec![2, 3, 1]];
-        assert_eq!(get_cheapest_path(grid), 6);
+        let matrix: Vec<Vec<u32>> = vec![vec![1, 3, 1], vec![2, 3, 1]];
+        assert_eq!(get_cheapest_path(matrix), 6);
     }
 
     #[test]
     fn test_get_cheapest_path_3() {
-        let grid: Vec<Vec<u32>> = vec![
+        let matrix: Vec<Vec<u32>> = vec![
             vec![1, 1, 1, 1, 1],
             vec![3, 100, 100, 100, 100],
             vec![1, 1, 1, 1, 1],
             vec![2, 2, 2, 2, 1],
             vec![1, 1, 1, 1, 1],
         ];
-        assert_eq!(get_cheapest_path(grid), 11);
+        assert_eq!(get_cheapest_path(matrix), 11);
     }
 }
