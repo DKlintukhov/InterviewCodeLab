@@ -1,9 +1,10 @@
 #include "pch.h"
 
 #include "util.h"
+#include "cheapest_path.h"
 
 int main(int, char const**)
 {
-    auto matrix = util::get_matrix_from_input();
+    cheapest_path::run_tests();
     return 0;
 }
