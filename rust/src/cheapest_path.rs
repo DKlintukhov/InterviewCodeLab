@@ -16,7 +16,7 @@
 */
 
 pub fn get_cheapest_path(matrix: Vec<Vec<u32>>) -> u32 {
-    if matrix.is_empty() {
+    if matrix.is_empty() || matrix.first().unwrap().is_empty() {
         return 0;
     }
 
@@ -48,8 +48,14 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_get_cheapest_path_empty() {
+    fn test_get_cheapest_path_empty_1() {
         let matrix: Vec<Vec<u32>> = vec![];
+        assert_eq!(get_cheapest_path(matrix), 0);
+    }
+
+    #[test]
+    fn test_get_cheapest_path_empty_2() {
+        let matrix: Vec<Vec<u32>> = vec![vec![]];
         assert_eq!(get_cheapest_path(matrix), 0);
     }
 

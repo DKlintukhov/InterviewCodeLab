@@ -7,7 +7,7 @@ namespace cheapest_path
 {
     uint32_t get_cheapest_path(const std::vector<std::vector<uint32_t>>& matrix)
     {
-        if (matrix.empty())
+        if (matrix.empty() || matrix.front().empty())
         {
             return 0;
         }
@@ -44,6 +44,11 @@ namespace cheapest_path
     {
         {
             const std::vector<std::vector<uint32_t>> matrix;
+            assert(get_cheapest_path(matrix) == 0);
+        }
+
+        {
+            const std::vector<std::vector<uint32_t>> matrix{ { {} } };
             assert(get_cheapest_path(matrix) == 0);
         }
 
