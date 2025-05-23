@@ -1,5 +1,6 @@
 mod util;
 mod cheapest_path;
+mod sort;
 use cheapest_path::get_cheapest_path;
 use util::get_matrix_from_input;
 
